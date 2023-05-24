@@ -38,7 +38,7 @@ describe('API /documents', () => {
                 res.should.have.status(200);
                 res.should.to.be.json;
                 res.body.should.be.a('array');
-                res.body.length.should.be.eql(0);
+                res.body.length.should.be.eql(3);
                 done();
             });
     });

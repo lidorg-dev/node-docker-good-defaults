@@ -31,15 +31,13 @@ const client = new MongoClient(url);
 
 let db;
 // Use connect method to connect to the Server
-setTimeout(() => {
-  client.connect(function(err) {
-    if (err) {
-      return console.error(err);
-    }
-    console.log("Connected successfully to database");
-    db = client.db(MONGO_DATABASE_NAME);
-  });
-}, 2000);
+client.connect(function(err) {
+  if (err) {
+    return console.error(err);
+  }
+  console.log("Connected successfully to database");
+  db = client.db(MONGO_DATABASE_NAME);
+});
 
 // Api
 const app = express();
