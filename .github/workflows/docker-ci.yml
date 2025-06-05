@@ -28,7 +28,9 @@ jobs:
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
-
+        
+      - name: check variable value and use it
+        run: echo ${{ DB_CONFIG }}
 
       # Set up BuildKit Docker container builder to be able to build
       # multi-platform images and export cache
